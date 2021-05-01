@@ -1,0 +1,16 @@
+name: "build-test"
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: setup-dxc
+      uses: ./
