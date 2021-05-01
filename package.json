@@ -1,6 +1,6 @@
 {
   "name": "setup-dxc",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Setup the DirectXShaderCompiler for later usage in the workflow.",
   "main": "lib/main.js",
