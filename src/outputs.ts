@@ -7,7 +7,7 @@ export default class Outputs {
         this.setOutput("dxc-path", value);
     }
 
-    private setOutput(name: string, value: string) : string {
-        return core.setOutput(name, value);
+    private setOutput(name: string, value: string) : void {
+        core.setOutput(name, value);
     }
 }

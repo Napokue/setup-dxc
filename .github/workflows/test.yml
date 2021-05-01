@@ -20,4 +20,5 @@ jobs:
         dxc-download-filename: dxc_2021_04-20.zip
     - name: echo-dxc-path
       run: echo "Dxc path - ${{steps.setup-dxc.outputs.dxc-path}}"
+    - run: dxc -help
 

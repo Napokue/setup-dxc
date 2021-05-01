@@ -22,30 +22,22 @@ async function run() {
       }
 
       try {
-        core.info(inputs.Tag);
-        core.info(inputs.DxcDownloadFilename);
-        core.info(inputs.DxcFolder);
-
         const dxcZipPath = await tc.downloadTool(GetDxcTagDownloadUrl(inputs.Tag, inputs.DxcDownloadFilename));
-        core.info(dxcZipPath);
-
 
         const dxcPath = path.join(
           process.env["ProgramW6432"] as string,
           inputs.DxcFolder
         );  
         
-        core.info(dxcPath);
+        await tc.extractZip(dxcZipPath, dxcPath);
 
-        const resultPath = await tc.extractZip(dxcZipPath, dxcPath);
-
-        core.info(resultPath);
+        const toolFolderPath = `${dxcPath}\\bin\\x64\\`;
         
-        outputs.DxcPath = resultPath;
-
+        core.addPath(toolFolderPath);
+        outputs.DxcPath = toolFolderPath;
       } catch (error) {
         core.setFailed(error.message);
-      }      
+      }
 }
 
 run();
