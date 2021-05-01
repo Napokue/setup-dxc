@@ -1,3 +1,6 @@
 name: "setup-dxc"
 description: "Setup the DirectXShaderCompiler for later usage in the workflow."
 author: "Napokue"
+runs:
+  using: 'node12'
+  main: 'index.js'
