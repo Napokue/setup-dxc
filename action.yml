@@ -3,16 +3,9 @@ description: "Setup the DirectXShaderCompiler for later usage in the workflow."
 author: "Napokue"
 inputs:
   tag:
-    description: "Tag that will be used to download a specific version of the DirectXShaderCompiler release"
-    required: true
-  dxc-download-filename:
-    description: "Filename that will be downloaded from the tag. 
-    This is a temporarily input, until we implemented a way to automatically get the right zip file from the release."
-    required: true
-  dxc-folder:
-    description: "Optional input that specifies that folder name where the dxc zip will be extracted to."
+    description: "Optional input that will download a tagged release. When not specified, the latest tag will be downloaded."
     required: false
-    default: "dxc"
+    default: "latest"
 outputs:
   dxc-path:
     description: "Location of the dxc compiler."
