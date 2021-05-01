@@ -2,6 +2,7 @@ import * as core from "@actions/core";
 import * as tc from "@actions/tool-cache";
 import * as path from "path";
 import Inputs from "./inputs";
+import Outputs from "./outputs";
 
 const IS_WINDOWS = process.platform === 'win32';
 
@@ -12,6 +13,7 @@ function GetDxcTagDownloadUrl(tag: string, filename: string) {
 }
 
 const inputs : Inputs = new Inputs();
+const outputs : Outputs = new Outputs();
 
 async function run(): Promise<void> {
       if (IS_WINDOWS === false) {
@@ -37,7 +39,9 @@ async function run(): Promise<void> {
 
         const resultPath = await tc.extractZip(dxcZipPath, dxcPath);
 
-        console.log(resultPath);        
+        console.log(resultPath);
+        
+        outputs.DxcPath = resultPath;
 
       } catch (error) {
         core.setFailed(error.message);

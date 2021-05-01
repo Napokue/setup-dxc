@@ -13,6 +13,9 @@ inputs:
     description: "Optional input that specifies that folder name where the dxc zip will be extracted to."
     required: false
     default: "dxc"
+outputs:
+  dxc-path:
+    description: "Location of the dxc compiler."
 runs:
   using: 'node12'
   main: 'dist/index.js'
