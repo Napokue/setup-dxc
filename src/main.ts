@@ -15,7 +15,7 @@ function GetDxcTagDownloadUrl(tag: string, filename: string) {
 const inputs : Inputs = new Inputs();
 const outputs : Outputs = new Outputs();
 
-async function run(): Promise<void> {
+async function run() {
       if (IS_WINDOWS === false) {
         core.setFailed('setup-dxc can only be run on Windows runners.');
         return;
