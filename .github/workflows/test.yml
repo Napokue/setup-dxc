@@ -12,13 +12,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: setup-dxc
-      id: setup-dxc
+    - name: setup-dxc-default
+      id: setup-dxc-default
       uses: ./
-      with:
-        tag: v1.6.2104
-        dxc-download-filename: dxc_2021_04-20.zip
-    - name: echo-dxc-path
-      run: echo "Dxc path - ${{steps.setup-dxc.outputs.dxc-path}}"
-    - run: dxc -help
 
+    - name: test-dxc-default
+      run: |
+        echo "setup-dxc-default - ${{steps.setup-dxc-default.outputs.dxc-path}}"        
+        dxc -help

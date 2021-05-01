@@ -4,15 +4,7 @@ A GitHub Action to setup the DirectXShaderCompiler in the workflow. The compiler
 ## Inputs
 
 ### `tag`
-**Required** Tag that will be used to download a specific version of the DirectXShaderCompiler release.
-
-### `dxc-download-filename`
-**Required** Filename that will be downloaded from the tag. 
-
-**Note:** This is a temporarily input, until we implemented a way to automatically get the right zip file from the release.
-
-### `dxc-folder`
-**Optional** input that specifies that folder name where the dxc zip will be extracted to. Default value is `dxc`.
+**Required** that will download a tagged DirectXShaderCompiler release. When not specified, the latest tag will be downloaded.
 
 ## Outputs
 
