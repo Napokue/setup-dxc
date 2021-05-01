@@ -22,12 +22,12 @@ async function run() {
       }
 
       try {
-        console.log(inputs.Tag);
-        console.log(inputs.DxcDownloadFilename);
-        console.log(inputs.DxcFolder);
+        core.info(inputs.Tag);
+        core.info(inputs.DxcDownloadFilename);
+        core.info(inputs.DxcFolder);
 
         const dxcZipPath = await tc.downloadTool(GetDxcTagDownloadUrl(inputs.Tag, inputs.DxcDownloadFilename));
-        console.log(dxcZipPath);
+        core.info(dxcZipPath);
 
 
         const dxcPath = path.join(
@@ -35,11 +35,11 @@ async function run() {
           inputs.DxcFolder
         );  
         
-        console.log(dxcPath);
+        core.info(dxcPath);
 
         const resultPath = await tc.extractZip(dxcZipPath, dxcPath);
 
-        console.log(resultPath);
+        core.info(resultPath);
         
         outputs.DxcPath = resultPath;
 
