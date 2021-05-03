@@ -5,7 +5,7 @@ This action will do the following steps:
 * Download the the zip file from the [release page](https://github.com/microsoft/DirectXShaderCompiler/releases). Based on the input it will by default download the "latest" tagged release, otherwise it will download the specified tagged release.
 * Extract the zip file to the `%ProgramW6432%\dxc` directory.
 * Add the location of the bin folder of the compiler (`%ProgramW6432%\dxc\bin\x64`) to the PATH variable.
-* Add the location of the bin folder of the compiler ((`%ProgramW6432%\dxc\bin\x64`)) to the `outputs`.
+* Add the location of the bin folder of the compiler (`%ProgramW6432%\dxc\bin\x64`) to the `outputs`.
 
 ## Inputs
 
